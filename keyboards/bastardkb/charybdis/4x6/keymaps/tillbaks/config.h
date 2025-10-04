@@ -18,19 +18,30 @@
 
 #ifdef VIA_ENABLE
 /* VIA configuration. */
-#    define DYNAMIC_KEYMAP_LAYER_COUNT 4
+#    define DYNAMIC_KEYMAP_LAYER_COUNT 8
 #endif // VIA_ENABLE
 
 #ifndef __arm__
 /* Disable unused features. */
-#    define NO_ACTION_ONESHOT
 #endif // __arm__
 
 /* Charybdis-specific features. */
 
 #ifdef POINTING_DEVICE_ENABLE
+#    define CHARYBDIS_DRAGSCROLL_REVERSE_Y
 // Automatically enable the pointer layer when moving the trackball.  See also:
 // - `CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS`
 // - `CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD`
 // #define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 #endif // POINTING_DEVICE_ENABLE
+
+/* One shot keys config */
+#define ONESHOT_TAP_TOGGLE 2
+#define ONESHOT_TIMEOUT 500
+
+/* Unicode */
+#define UNICODE_SELECTED_MODES UNICODE_MODE_MACOS, UNICODE_MODE_LINUX
+
+/* Something about split sync */
+#define SPLIT_LAYER_STATE_ENABLE
+#define CHARYBDIS_CONFIG_SYNC
